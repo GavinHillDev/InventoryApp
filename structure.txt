@@ -1,0 +1,19 @@
+Inventory Item => {Name , Price , desc,  Stock Left, url}
+
+Inventory Item => {name - String, Price - number}
+
+Name => {title : String}
+
+Price => {$ : number}
+
+Stock Left => {ammount of items }
+
+Anime Power Item Shop
+
+
+Finish my controllers, 
+Create Layout Page and then pug pages showing data
+
+|||Title|||
+ ||Power||
+||||New||||

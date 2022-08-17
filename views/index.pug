@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1= title
+
+  
+  if error
+    p Error getting Counted content.
+  else
+    h4 The Anime Power Shop has the following:
+
+    ul
+    h3
+      li #[strong Powers:] !{data.item_count}
+      li #[strong PowerHolders:] !{data.powerholder_count}
+      li #[strong Genres:] !{data.genre_count}
+      
+    

@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  h1= title
+
+      div(class='container m-auto' style="width: 2000px" id='containerlist')
+            div(class='row row-cols-1 row-cols-md-3 m-auto')
+             each item in item_list
+              div(class="card" )
+               h5(class="card-title") #[strong Power:]
+                   a(href=item.url) #{item.power} 
+                     h5(class="card-text") 
+                      a() #[strong Description Of Power:]
+                      br
+                      a() #{item.desc} 
+                        h5(class="card-text") 
+                          a() #[strong Price Of Power:]
+                          br
+                          a() #{item.price} 
+                            h5(class="card-text") 
+                              a() #[strong Character Name:]
+                              br
+                              a() #{item.powerholder.charactername} 
+                                 h5(class="card-text") 
+                                   a() #[strong Anime:]
+                                   br
+                                   a() #{item.powerholder.anime} 
+                                    //- h5(class="card-text") 
+                                    //-   a() Genre:
+                                    //-   a() #{item.genre.name} 
+                            
+                     

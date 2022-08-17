@@ -1,0 +1,37 @@
+extends layout
+
+block content
+  h1= title
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='title') Title:
+      input#power.form-control(type='text', placeholder='Name of Power' name='power' required='true' value=(undefined===item ? '' : item.power) )
+    div.form-group
+      label(for='powerholder') PowerHolder:
+      select#powerholder.form-control(type='select', placeholder='Select PowerHolder' name='powerholder' required='true' )
+        - powerholders.sort(function(a, b) {let textA = a.charactername.toUpperCase(); let textB = b.charactername.toUpperCase(); return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;});
+        for powerholder in powerholders
+          if item
+            option(value=powerholder._id selected=(powerholder._id.toString()===item.powerholder._id.toString() ? 'selected' : false) ) #{powerholder.charactername}
+          else
+            option(value=powerholder._id) #{powerholder.charactername}
+    div.form-group
+      label(for='desc') Description:
+      textarea#desc.form-control(type='textarea', placeholder='Description' name='desc' required='true') #{undefined===item ? '' : item.desc}
+    div.form-group
+      label(for='price') Price of Power:
+      textarea#price.form-control(type='textarea', placeholder='Price' name='price' required='true') #{undefined===item ? '' : item.price}
+    div.form-group
+      label Genre:
+      div
+        for genre in genres
+          div(style='display: inline; padding-right:10px;')
+            input.checkbox-input(type='checkbox', name='genre', id=genre._id, value=genre._id, checked=genre.checked )
+            label(for=genre._id) #{genre.name}
+    button.btn.btn-primary(type='submit') Submit
+
+  if errors
+    ul
+      for error in errors
+        li!= error.msg

@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  h1= title
+        div(class='container m-auto' style="width: 2000px" id='containerlist')
+            div(class='row row-cols-1 row-cols-md-4 m-auto')
+             each powerholder in powerholder_list
+              div(class="card h-100  " )
+               h5(class="card-title") #[strong Character:]
+                a(href=powerholder.url)  #{powerholder.charactername}
+                    h5(class="card-title")
+                     a() #[strong Anime: ]
+                     a() #{powerholder.anime}
+                 
+                  
+
+  //- ul
+  //-   each powerholder in powerholder_list
+  //-     li
+  //-       a(href=powerholder.url) #{powerholder.charactername}
+  //-       |  (#{powerholder.anime})
+
+  //-   else
+  //-     li There are no authors.        

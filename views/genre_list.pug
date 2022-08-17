@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+     div(class='container m-auto' style="width: 2000px" id='containerlist')
+            div(class='row row-cols-1 row-cols-md-4 m-auto')
+             each genre in genre_list
+              div(class="card h-100  " )
+               h3(class="card-title")
+                   a(href=genre.url) #{genre.name}
+                  
+                 

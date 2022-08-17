@@ -1,0 +1,25 @@
+extends layout
+
+block content
+
+  h1 Genre: #{genre.name}
+
+  div(style='margin-left:20px;margin-top:20px')
+
+    h3 Powers-
+
+    dl
+      each item in genre_items
+        dt
+          a(href=item.url) #{item.power}
+        dd #{item.desc}
+
+
+   
+      else
+        h3 This genre has no Powers
+      h3
+        a(href=genre.url+'/delete') Delete Genre
+        |
+        |
+        a(href=genre.url+'/update') Update Genre

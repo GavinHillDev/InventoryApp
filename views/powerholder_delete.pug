@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  h1 #{title}: #{powerholder.charactername}
+
+  if powerholder_items.length
+
+    p #[strong Delete the following books before attempting to delete this author.]
+
+    div(style='margin-left:20px;margin-top:20px')
+
+      h4 Books
+
+      dl
+      each item in powerholder_items
+        dt
+          a(href=item.url) #{item.power}
+        dd #{item.desc}
+
+  else
+    h4 Do you really want to delete this Character?
+
+    form(method='POST' action='')
+      div.form-group
+        input#powerholderid.form-control(type='hidden',name='powerholderid', required='true', value=powerholder._id )
+
+      button.btn.btn-primary(type='submit') Delete Character

@@ -1,0 +1,26 @@
+extends layout
+
+block content
+
+  h1 Powerholder: #{powerholder.charactername}
+
+  div(style='margin-left:20px;margin-top:20px')
+
+    h3 Powers:
+
+    dl
+      each item in powerholder_items
+        dt
+          a(href=item.url) #{item.power}
+        dd #{item.desc}
+
+      else
+        h3 This Characters has no Powers.
+    hr
+    h3
+      a(href=powerholder.url+'/delete') Delete Character
+      |       
+      |
+      |
+      |     
+      a(href=powerholder.url+'/update') Update Character

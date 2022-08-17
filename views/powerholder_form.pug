@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1=title
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='charactername') Character Name:
+      input#charactername.form-control(type='text' placeholder='Naruto Uzumaki' name='charactername' required='true' value=(undefined===powerholder ? '' : powerholder.charactername) )
+      label(for='anime') Anime:
+      input#anime.form-control(type='text' placeholder='Naruto Shippuden' name='anime' required='true' value=(undefined===powerholder ? '' : powerholder.anime))
+    button.btn.btn-primary(type='submit') Submit
+  if errors
+    ul
+      for error in errors
+        li!= error.msg

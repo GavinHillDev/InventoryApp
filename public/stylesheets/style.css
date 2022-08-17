@@ -1,0 +1,41 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #4eb3e2;
+  font-size: larger;
+}
+h5, a, h2, h3  {
+  text-align: center;
+}
+h1 {
+  text-align: center;
+}
+.card-deck {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+nav {
+  background-color: aliceblue;
+}
+body {
+  margin: 0px;
+}
+.containerlist {
+  font-size: larger;
+}
+div.form-group, div.form-group div, textarea, select, input {
+  text-align: center;
+}
+div.form-group {
+  width: 500px;
+  margin-left: 37%
+}
+div {
+  text-align: center;
+}
+/* textarea, select, text {
+  text-align: center;
+} */

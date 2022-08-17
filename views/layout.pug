@@ -1,0 +1,78 @@
+doctype html
+html(lang='en')
+  head
+    title= title
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css", integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z", crossorigin="anonymous")
+    script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js", integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj", crossorigin="anonymous")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js", integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV", crossorigin="anonymous")
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    nav(class='navbar navbar-expand-lg navbar-light bg-light')
+      button(class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation")
+        span(class="navbar-toggler-icon")     
+      div(class='collapse navbar-collapse' id="navbarNavDropdown")
+          block sidebar
+           ul(class='navbar-nav mx-auto')
+              li(class='nav-link')
+                a(href='/inventory') Home
+              li(class='nav-link')
+                a(href='/inventory/items') All Powers
+              li(class='nav-link')
+                a(href='/inventory/powerholders') All Characters
+              li(class='nav-link')
+                a(href='/inventory/genres') All genres
+                              
+              li(class='nav-item dropdown')
+                a(class='nav-link dropdown-toggle' href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Create
+                div(class='dropdown-menu' aria-labelledby="navbarDropdownMenuLink")
+                     a(href='/inventory/powerholder/create' class='dropdown-item') Create New Character
+                     a(class='dropdown-item' href='/inventory/genre/create') Create New Genre
+                     a( class='dropdown-item' href='/inventory/item/create') Create New Power
+    div
+                   block content
+
+          
+
+
+
+//- body
+//-     div(class='container-fluid')
+//-       div(class='row')
+//-         div(class='col-sm-2')
+//-           block sidebar
+//-             ul(class='sidebar-nav')
+//-               li
+//-                 a(href='/inventory') Home
+//-               li
+//-                 a(href='/inventory/items') All books
+//-               li
+//-                 a(href='/inventory/powerholders') All authors
+//-               li
+//-                 a(href='/inventory/genres') All genres
+              
+//-                 hr
+//-               li
+//-                 a(href='/inventory/powerholder/create') Create new author
+//-               li
+//-                 a(href='/inventory/genre/create') Create new genre
+//-               li
+//-                 a(href='/inventory/item/create') Create new book
+
+//-         div(class='col-sm-10')
+//-           block content
+
+
+
+
+
+              //- div(class='col-sm-11')
+              //-   block contentpower
+//-           <div class="row">
+//-   <div class="col">col</div>
+//-   <div class="col">col</div>
+//-   <div class="w-100"></div>
+//-   <div class="col">col</div>
+//-   <div class="col">col</div>
+//- </div>
