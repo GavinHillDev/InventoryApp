@@ -32,7 +32,7 @@ app.use(compression()); //Compress all routes
 
 app.use(express.static(path.join(__dirname, 'public')));
 // app.use(helmet());
-var dev_db_url = 'mongodb+srv://sir:woofsalot@cluster0.gfjkut2.mongodb.net/?retryWrites=true&w=majority';
+var dev_db_url = 'mongodb+srv://sir:woofsalot@cluster0.2ahbkhi.mongodb.net/?retryWrites=true&w=majority';
 const mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true});
 //Get the default connection
