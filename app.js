@@ -4,7 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose')
-
+var dotenv = require('dotenv')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var inventoryRouter = require('./routes/inventory');
@@ -14,8 +14,8 @@ const helmet = require('helmet');
 
 var app = express();
 
+dotenv.config()
 
-var dev_db_url = 'mongodb+srv://sir:woofsalot@cluster0.gfjkut2.mongodb.net/?retryWrites=true&w=majority';
 const mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true});
 //Get the default connection
