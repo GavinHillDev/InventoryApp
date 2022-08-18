@@ -15,6 +15,16 @@ const helmet = require('helmet');
 var app = express();
 
 
+var dev_db_url = 'mongodb+srv://sir:woofsalot@cluster0.gfjkut2.mongodb.net/?retryWrites=true&w=majority';
+const mongoDB = process.env.MONGODB_URI || dev_db_url;
+mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true});
+//Get the default connection
+mongoose.Promise = global.Promise;
+var db = mongoose.connection;
+
+//Bind connection to error event (to get notification of connection errors)
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
 // app.use(compression()); //Compress all routes
 
 // view engine setup
@@ -32,14 +42,6 @@ app.use(compression()); //Compress all routes
 
 app.use(express.static(path.join(__dirname, 'public')));
 // app.use(helmet());
-var dev_db_url = 'mongodb+srv://sir:woofsalot@cluster0.2ahbkhi.mongodb.net/?retryWrites=true&w=majority';
-const mongoDB = process.env.MONGODB_URI || dev_db_url;
-mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true});
-//Get the default connection
-var db = mongoose.connection;
-//Bind connection to error event (to get notification of connection errors)
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
