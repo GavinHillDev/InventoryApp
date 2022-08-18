@@ -1,18 +1,23 @@
 extends layout
 
 block content
-  h1= title
+  h1= title 
+       
         div(class='container m-auto' style="width: 2000px" id='containerlist')
+         
             div(class='row row-cols-1 row-cols-md-4 m-auto')
              each powerholder in powerholder_list
               div(class="card h-100  " )
-               h5(class="card-title") #[strong Character:]
-                a(href=powerholder.url)  #{powerholder.charactername}
+               h5(class="card-title") #[strong Character:] 
+                <br/>
+                 a(href=powerholder.url)  #{powerholder.charactername}
                     h5(class="card-title")
                      a() #[strong Anime: ]
-                     a() #{powerholder.anime}
+                      <br/>
+                       a() #{powerholder.anime}
                  
-                  
+            div()
+             a(href='/inventory/powerholder/create' class='creates') Create New Character          
 
   //- ul
   //-   each powerholder in powerholder_list

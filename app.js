@@ -11,23 +11,29 @@ var inventoryRouter = require('./routes/inventory');
 const compression = require('compression');
 const helmet = require('helmet');
 
+
 var app = express();
-app.use(helmet());
+
+
+// app.use(compression()); //Compress all routes
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-app.use(compression()); //Compress all routes
 
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(helmet());
+app.use(compression()); //Compress all routes
 
-var mongoDB = 'mongodb+srv://sir:woofsalot@cluster0.gfjkut2.mongodb.net/?retryWrites=true&w=majority';
+app.use(express.static(path.join(__dirname, 'public')));
+// app.use(helmet());
+var dev_db_url = 'mongodb+srv://sir:woofsalot@cluster0.gfjkut2.mongodb.net/?retryWrites=true&w=majority';
+const mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true});
 //Get the default connection
 var db = mongoose.connection;

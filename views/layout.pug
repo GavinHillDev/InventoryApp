@@ -25,11 +25,11 @@ html(lang='en')
                 a(href='/inventory/genres') All genres
                               
               li(class='nav-item dropdown')
-                a(class='nav-link dropdown-toggle' href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Create
+                a(class='nav-link dropdown-toggle'  id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Create
                 div(class='dropdown-menu' aria-labelledby="navbarDropdownMenuLink")
                      a(href='/inventory/powerholder/create' class='dropdown-item') Create New Character
-                     a(class='dropdown-item' href='/inventory/genre/create') Create New Genre
-                     a( class='dropdown-item' href='/inventory/item/create') Create New Power
+                     a(href='/inventory/genre/create' class='dropdown-item') Create New genre
+                     a( href='/inventory/item/create' class='dropdown-item') Create New Power
     div
                    block content
 
